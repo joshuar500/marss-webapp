@@ -3,13 +3,14 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
+
     <servlet>
         <servlet-name>FeedServlet</servlet-name>
-        <servlet-class>com.joshrincon.test.FeedServlet</servlet-class>
+        <servlet-class>com.joshrincon.controller.FeedServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>EntryServlet</servlet-name>
-        <servlet-class>com.joshrincon.test.EntryServlet</servlet-class>
+        <servlet-class>com.joshrincon.controller.EntryServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>FeedServlet</servlet-name>

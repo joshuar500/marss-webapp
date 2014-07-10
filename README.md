@@ -1,4 +1,4 @@
 MaRSS Reader
 =====
 
-A basic RSS reader for the web.
+A minimal RSS reader for the web.

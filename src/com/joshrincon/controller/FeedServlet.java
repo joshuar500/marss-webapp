@@ -1,4 +1,4 @@
-package com.joshrincon.test;
+package com.joshrincon.controller;
 
 import com.joshrincon.beans.SingletonEntriesFeed;
 import com.rometools.rome.feed.synd.SyndEntry;
@@ -9,25 +9,27 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
+import java.util.ArrayList;
 
-/**
- * Created by on 7/10/2014.
- */
-public class EntryServlet extends HttpServlet {
+
+public class FeedServlet extends HttpServlet {
+
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        int entryPosition = Integer.parseInt(request.getParameter("action"));
-
-        SyndEntry entry = SingletonEntriesFeed.getInstance().getAnEntry(entryPosition);
-
         HttpSession session = request.getSession();
-        session.setAttribute("entry", entry);
 
-        request.getRequestDispatcher("/WEB-INF/jsps/entry.jsp").forward(request, response);
+        if(session.getAttribute("syndEntries") == null) {
+            SingletonEntriesFeed.getInstance().createFeeds();
+            ArrayList<SyndEntry> syndEntries = SingletonEntriesFeed.getInstance().getEntries();
+            session.setAttribute("syndEntries", syndEntries);
+            request.getRequestDispatcher("/WEB-INF/jsps/feeds.jsp").forward(request, response);
+        } else {
+            request.getRequestDispatcher("/WEB-INF/jsps/feeds.jsp").forward(request, response);
+        }
 
 
     }

@@ -24,6 +24,8 @@ public class EntryServlet extends HttpServlet {
 
         SyndEntry entry = SingletonEntriesFeed.getInstance().getOneEntry(entryPosition);
 
+        System.out.println(entry.getDescription().getValue());
+
         HttpSession session = request.getSession();
         session.setAttribute("entry", entry);
 

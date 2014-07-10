@@ -37,6 +37,7 @@
     <div class="pure-u-1-3">
         <p><h1><c:out value="${entry.title}"/></h1>
         <h2><c:out value="${entry.publishedDate}" /> </h2>
+        <c:out value="${entry.contents}" escapeXml="false" />
     </div>
     <div class="pure-u-1-3">&nbsp;</div>
 </div>

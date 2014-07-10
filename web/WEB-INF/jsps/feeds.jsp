@@ -10,8 +10,8 @@
 <h2></h2>
 <h2>2<c:out value='${syndFeed.title}' /> </h2>
 <ul>
-    <c:forEach var="entry" items="${syndFeed.entries}">
-        <li><c:out value="${entry.title}" /></li>
+    <c:forEach var="entry" items="${syndFeed.entries}" varStatus="status">
+        <li><a href="<c:out value='/entry?action=${status.index}' />"><c:out value="${entry.title}" /></a></li>
     </c:forEach>
 </ul>
 </body>

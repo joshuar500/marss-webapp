@@ -11,6 +11,16 @@
         </webroots>
       </configuration>
     </facet>
+    <facet type="web" name="Web2">
+      <configuration>
+        <descriptors>
+          <deploymentDescriptor name="web.xml" url="file://$MODULE_DIR$/web/WEB-INF/web.xml" />
+        </descriptors>
+        <webroots>
+          <root url="file://$MODULE_DIR$/web" relative="/" />
+        </webroots>
+      </configuration>
+    </facet>
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
@@ -29,24 +39,7 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://C:/Program Files/Java/GlassFish/glassfish/modules/javax.servlet.jsp.jstl-api.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://C:/Program Files/Java/GlassFish/glassfish/modules/javax.servlet.jsp.jstl.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
+    <orderEntry type="library" name="jdom-2.0.5" level="project" />
     <orderEntry type="library" name="rome-1.5.0" level="project" />
     <orderEntry type="library" name="rome-certiorem-1.5.0" level="project" />
     <orderEntry type="library" name="rome-fetcher-1.5.0" level="project" />
@@ -54,9 +47,25 @@
     <orderEntry type="library" name="rome-opml-1.5.0" level="project" />
     <orderEntry type="library" name="rome-utils-1.5.0" level="project" />
     <orderEntry type="library" name="slf4j-api-1.7.7" level="project" />
-    <orderEntry type="library" name="log4j-core-2.0-rc2" level="project" />
     <orderEntry type="library" name="slf4j-simple-1.7.7" level="project" />
-    <orderEntry type="library" name="jdom-2.0.5" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/glassfish4/glassfish/modules/javax.servlet.jsp.jstl-api.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://C:/glassfish4/glassfish/modules/javax.servlet.jsp.jstl.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>
 

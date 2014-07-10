@@ -1,5 +1,6 @@
 package com.joshrincon.test;
 
+import com.joshrincon.beans.SingletonEntriesFeed;
 import com.rometools.rome.feed.synd.SyndFeed;
 import com.rometools.rome.io.FeedException;
 import com.rometools.rome.io.SyndFeedInput;
@@ -14,7 +15,7 @@ import java.io.IOException;
 import java.net.URL;
 
 
-public class TestServlet extends HttpServlet {
+public class FeedServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -33,6 +34,8 @@ public class TestServlet extends HttpServlet {
         } catch (FeedException e) {
             e.printStackTrace();
         }
+
+        SingletonEntriesFeed.getInstance().setTheEntries(syndFeed);
 
         HttpSession session = request.getSession();
         session.setAttribute("syndFeed", syndFeed);
